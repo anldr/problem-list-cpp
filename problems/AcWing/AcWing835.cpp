@@ -6,7 +6,7 @@ const int N = 1e5 + 7;
 int son[N][31];
 int cnt[N];
 int idx;
-void insert (char* s) {
+void insert(char* s) {
     int p = 0;
     int len = strlen(s);
     for (int i = 0; i < len; i++) {
@@ -17,7 +17,7 @@ void insert (char* s) {
     cnt[p]++;
     return ;
 }
-int query (char* s) {
+int query(char* s) {
     int p = 0;
     int len = strlen(s);
     for (int i = 0; i < len; i++) {
@@ -27,20 +27,20 @@ int query (char* s) {
     }
     return cnt[p];
 }
-int main () {
+int main() {
     int n;
-    scanf ("%d", &n);
+    scanf("%d", &n);
     while (n--) {
         char op[3];
-        scanf ("%s", op);
+        scanf("%s", op);
         if (op[0] == 'I') {
             char str[N];
-            scanf ("%s", str);
+            scanf("%s", str);
             insert(str);
         } else {
             char str[N];
-            scanf ("%s", str);
-            printf ("%d\n", query(str));
+            scanf("%s", str);
+            printf("%d\n", query(str));
         }
     }
     return 0;

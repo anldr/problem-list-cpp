@@ -9,22 +9,22 @@ char mat[R][C];
 char matc[C][R];
 int r,c;
 int ne[C];
-void nexxt (char* p, int len) {
-    memset (ne, 0, sizeof ne);
+void nexxt(char* p, int len) {
+    memset(ne, 0, sizeof ne);
     for (int i = 2, j = 0; i <= len; i++) {
         while (j && p[i] != p[j+1]) j = ne[j];
         if (p[i] == p[j+1]) j++;
         ne[i] = j;
     }
 }
-long long GCD (long long a, long long b) {
+long long GCD(long long a, long long b) {
     if (!b) return a;
-    return GCD (b, a % b);
+    return GCD(b, a % b);
 }
 int main () {
-    scanf ("%d%d", &r, &c);
+    scanf("%d%d", &r, &c);
     for (int i = 0; i < r; i++) {
-        scanf ("%s", mat[i] + 1);
+        scanf("%s", mat[i] + 1);
     }
 
     for (int i = 1; i <= c; i++) {
@@ -74,8 +74,8 @@ int main () {
         }
         //cout << "C:" << res << endl;
         // lcm
-        ansC = ansC * res / GCD (ansC, res);
+        ansC = ansC * res / GCD(ansC, res);
     }
-    printf ("%d\n", ansR * ansC);
+    printf("%d\n", ansR * ansC);
     return 0;
 }

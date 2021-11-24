@@ -3,23 +3,23 @@
 
 using namespace std;
 
-int main () {
+int main() {
     int T;
-    scanf ("%d", &T);
+    scanf("%d", &T);
     while (T--) {
         int n;
-        scanf ("%d", &n);
+        scanf("%d", &n);
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 if (j == i || j - i == 1) {
-                    printf ("1 ");
+                    printf("1 ");
                 } else if (j == 1 && i == n) {
-                    printf ("1 ");
+                    printf("1 ");
                 } else {
-                    printf ("0 ");
+                    printf("0 ");
                 }
             }
-            printf ("\n");
+            printf("\n");
         }
     }
     return 0;
