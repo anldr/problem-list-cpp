@@ -5,11 +5,11 @@ using namespace std;
 
 const int N = 3e5+7;
 int s[N];
-int main () {
+int main() {
     int n,m;
-    scanf ("%d%d", &n,&m);
+    scanf("%d%d", &n,&m);
     for (int i = 1; i<= n; i++) {
-        scanf ("%d", &s[i]);
+        scanf("%d", &s[i]);
         s[i] += s[i -1];
     }
     int res = -1;
@@ -23,6 +23,6 @@ int main () {
         while (q.size() && s[q.back()] >= s[i]) q.pop_back();
         q.push_back(i);
     }
-    printf ("%d\n", res);
+    printf("%d\n", res);
     return 0;
 }

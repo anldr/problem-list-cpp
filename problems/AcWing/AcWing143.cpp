@@ -23,7 +23,7 @@ void insert(int x) {
     }
     return ;
 }
-int query (int x) {
+int query(int x) {
     int p = 0, res = 0;
     for (int i = 30; i >= 0; i--) {
         int u = (x >> i) & 1;
@@ -32,16 +32,16 @@ int query (int x) {
     }
     return res;
 }
-int main () {
+int main() {
     int n;
-    scanf ("%d", &n);
+    scanf("%d", &n);
     int ans = -1;
     for (int i = 1; i <= n; i++) {
         int x;
-        scanf ("%d", &x);
+        scanf("%d", &x);
         ans = max (ans, query(x));
-        insert (x);
+        insert(x);
     }
-    printf ("%d\n", ans);
+    printf("%d\n", ans);
     return 0;
 }

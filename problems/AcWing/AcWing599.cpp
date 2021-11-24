@@ -41,19 +41,19 @@ using namespace std;
 const int N = 1e6 + 7;
 int res[N];
 int h[N], v[N];
-int main () {
+int main() {
     int n;
-    scanf ("%d", &n);
+    scanf("%d", &n);
     int ans = -1;
     deque<int> q, p;
     for (int i = 1; i <= n; i++) {
-        scanf ("%d %d", &h[i], &v[i]);
+        scanf("%d %d", &h[i], &v[i]);
         while (q.size() && h[q.back()] <= h[i]) q.pop_back();
         if (q.size()) res[q.back()] += v[i], ans = max (ans, res[q.back()]);
         q.push_back(i);
         while (p.size() && h[p.back()] <= h[i]) res[i] += v[p.back()], p.pop_back(); 
         p.push_back(i);
     }
-    printf ("%d\n", ans);
+    printf("%d\n", ans);
     return 0;
 }
