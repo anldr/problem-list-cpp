@@ -1,2 +1,2 @@
 # problem-list-cpp
-solved by cpp
+solved by c/cpp
